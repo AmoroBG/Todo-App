@@ -1,1 +1,0 @@
-This is a Todo List App built with Node/ ExpressJS
