@@ -6,15 +6,22 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+// EJS
+app.set("view engine", "ejs")
+
+
 // Routes
 app.get("/", function(req, res) {
     const today = new Date()
     const currentDay = today.getDay()
+    let thisDay = ""
     if (currentDay === "0" || currentDay === "6") {
-        res.send("Weekend")
+        thisDay = "Weekend"
     } else {
-        res.send("Week Day")
+        thisDay = "Week Day"
     }
+    res.render("index", { thisDay: thisDay })
+    console.log(thisDay);
 })
 
 const PORT = 3000 | process.env.PORT
