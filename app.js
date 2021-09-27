@@ -9,19 +9,21 @@ app.use(express.urlencoded({ extended: true }))
 // EJS
 app.set("view engine", "ejs")
 
-
-// Routes
+const items = []
+    // Routes
 app.get("/", function(req, res) {
     const today = new Date()
-    const currentDay = today.getDay()
-    let thisDay = ""
-    if (currentDay === "0" || currentDay === "6") {
-        thisDay = "Weekend"
-    } else {
-        thisDay = "Week Day"
-    }
-    res.render("index", { thisDay: thisDay })
-    console.log(thisDay);
+    const day = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const curentDay = today.toLocaleDateString("en-US", day);
+
+    res.render("todos", { curentDay: curentDay, items: items })
+
+})
+app.post("/", function(req, res) {
+    item = req.body.item
+    console.log(item);
+    items.push(item)
+    res.redirect("/")
 })
 
 const PORT = 3000 | process.env.PORT
