@@ -2,6 +2,10 @@ const express = require("express")
 
 const app = express()
 
+// Rendering Static files
+app.use(express.static("public"))
+
+
 // body-parser
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))

@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.5rem;
+}
+
+
+/* Utility classes */
+
+li {
+    list-style: none;
+}
+
+.header,
+.footer {
+    width: 100%;
+    background-color: tomato;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.container {
+    width: 45%;
+    margin: auto;
+    padding: 2rem 5rem;
+    background-color: wheat;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    text-align: center;
+    padding: 1rem;
+}
+
+form {
+    margin: 1rem;
+    text-align: center;
+}
+
+input,
+button {
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+}
