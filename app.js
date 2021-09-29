@@ -25,7 +25,6 @@ app.get("/", function(req, res) {
 })
 app.post("/", function(req, res) {
     item = req.body.item
-    console.log(item);
     items.push(item)
     res.redirect("/")
 })
