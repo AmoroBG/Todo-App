@@ -20,7 +20,7 @@
         </section>
         <section class="items">
             <% for(let i=0; i< items.length; i++){ %>
-                <ul>
+                <!-- <ul>
                     <li>
                         <p>
                             <input type="checkbox" name="item-check">
@@ -29,13 +29,19 @@
                             <%= items[i] %>
                         </p>
                     </li>
-                </ul>
+                </ul> -->
+                <div class="todo-items">
+                    <input type="checkbox" name="item-check">
+                    <p>
+                        <%= items[i] %>
+                    </p>
+                </div>
                 <%   } %>
 
         </section>
         <section class="add-items-form">
             <form action="/" method="POST">
-                <input type="text" name="item" placeholder="New Todo ...">
+                <input type="text" name="item" placeholder="New Todo ..." autocomplete="off">
                 <button type="submit"> +</button>
             </form>
         </section>
