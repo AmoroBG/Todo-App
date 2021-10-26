@@ -1,4 +1,23 @@
 const express = require("express")
+const mongoose=require("mongoose")
+
+// Connect to DB
+mongoose.connect("mongodb://localhost:27017/todoDB",{useNewURLParser:true})
+
+// Create schema
+const itemSchema={
+    name:String
+}
+
+// Create model
+const Item=mongoose.model("Item", itemSchema)
+
+// Insert item to db
+const item=new Item({
+    name:"Rest"
+})
+item.save()
+
 
 const app = express()
 
